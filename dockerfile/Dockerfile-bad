@@ -1,0 +1,6 @@
+FROM alpine:3.13
+RUN apk --no-cache add ca-certificates git
+ADD vlad /usr/local/bin/vlad
+ADD contrib/*.tpl contrib/
+USER root
+ENTRYPOINT ["vlad"]
